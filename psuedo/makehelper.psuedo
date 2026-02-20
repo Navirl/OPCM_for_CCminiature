@@ -1,0 +1,10 @@
+-- 作成ヘルパー
+func getslotnumfromtable(toolbaritems,itemname):slotnum
+    for i,v in toolbaritems do
+        name,num = split(v,":")
+        if name == itemname
+            local slotnum = i
+            return slotnum
+        end
+    end
+end

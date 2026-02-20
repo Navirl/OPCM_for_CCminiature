@@ -1,0 +1,84 @@
+-- 作成
+
+-- エンパ材料
+-- 実際は構造体から受け取る
+-- nilの可能性がある場合、1,8,27...と3乗の要素持ちしか通さないことにする
+local projdata = {
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","redblock","obsidian",
+                    "obsidian","obsidian","obsidian",
+
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                }
+
+local dropitem = "redstone"
+
+-- プロジェクターサイズ
+-- 立方体しかないはずなので楽
+local projsize = 3
+
+-- サイズ
+local size = table.maxtn(projdata)
+
+-- ここでやってるけど、本来は構造体に含むべきだと思う
+-- いいか、ここ以外で使わないし
+local edgesize
+local facesize
+for i,v in range(5) do
+    if size == i^3
+        edgesize = i
+        facesize = i^2
+    end
+
+if size % edgesize != 0
+    error("mismatch size %", size)
+    return
+end
+
+local sub = projsize - edgesize
+
+if sub <= 0
+    return
+end
+
+-- プロジェクター都合上一つ周りに物はおけない
+-- チャージャーはその外にあるのでそこまで移動
+right 2
+for i1,v1 in projdata do
+    if v1 ~= nil
+        -- 設置
+        place v1
+    end
+    -- 右端なら、左へ戻る
+    if i1 % edgesize == 0
+        left edgesize-1
+        -- 最終行なら最初の行に戻って上へ
+        if i1 % facesize == 0
+            north edgesize-1
+            up 1
+        end
+        -- 最終行でないなら次の行へ
+        else
+            south 1
+        end
+    end
+    -- 右端でないなら、次のブロックへ
+    else
+        right
+    end
+end
+
+-- proj3, height2みたいなときにprojectorの外まで出る
+if sub >= 0
+    up sub
+end
+
+dropdown dropitem
+left 2
+down projsize

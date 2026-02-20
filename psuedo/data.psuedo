@@ -1,0 +1,57 @@
+-- 構造体
+-- エンパ
+
+local projdata = {
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","redblock","obsidian",
+                    "obsidian","obsidian","obsidian",
+
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                    "obsidian","obsidian","obsidian",
+                }
+
+local dropitem = "redstone"
+
+local detectitem = "obsidian"
+
+-- detectitemはtoolbaritemsの一番最初にする、作成してから最後に入れ替え
+-- この関数は別ファイルに移したほうがよさそう
+func maketoolbaritems(projdata,dropitem):toolbaritems
+    local temptoolbar = {}
+    local table.insert(projdata,dropitem)
+    for i,v in projdata
+        for i2,v2 in temptoolbar
+            if v2 == v
+                temptoolbar[i2+1] = temptoolbar[i2+1] + 1
+            end
+        end
+        table.insert(temptoolbar,v)
+        table.inert(temptoolbar,1)
+    end
+
+    local toolbaritems = {}
+    for i = 1, #temptoolbar, 2
+        table.insert(toolbaritems,concat(
+                        temptoolbar[i],":",temptoolbar[i+1]
+                    ))
+        if temptoolbar[i] == detectitem
+            table.insert(toolbaritems,0,toolbaritems[-1])
+            table.remove(toolbaritems)
+        end
+    end
+    return toolbaritems
+end
+
+local toolbaritems = maketoolbaritems(projdata,dropitem)
+
+-- 分かりやすさ優先、連想配列
+-- 物によっては余計なもんが付いてくるが、allitemdata.projdataみたいな感じで呼べると考えたら
+local enderparldata = {projdata:projdata,dropitem:dropitem,toolbaritems:toolbaritems}
+
+-- 最後のデータを返すように、それぞれの作成で別の構造体ファイルを用意
+-- 何かの関数で全ての構造体を読み込んだテーブルとか用意しておけばいいかな
