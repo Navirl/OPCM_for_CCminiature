@@ -1,4 +1,4 @@
-local structure = require("data.structure")
+local structure = require("structure")
 
 local ender_pearl = {}
 setmetatable(ender_pearl, {__index = structure})

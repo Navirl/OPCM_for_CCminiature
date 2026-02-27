@@ -7,4 +7,4 @@ func getslotnumfromtable(toolbaritems,itemname):slotnum
             return slotnum
         end
     end
-end
+endzz

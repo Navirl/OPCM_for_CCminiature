@@ -1,4 +1,4 @@
-local structure = require("data.structure")
+local structure = require("structure")
 local robot = require("robot")
 
 local function getSlotNumFromTable(toolbar_items,item_name)
