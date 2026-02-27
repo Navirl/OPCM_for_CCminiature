@@ -15,16 +15,20 @@ end
 
 function M:toolbarItems()
     local temp_toolbar = {}
-    local temp_proj_struct = self.proj_struct
-    table.insert(temp_proj_struct,self.drop_item)
-    for i,v in pairs(temp_proj_struct) do
-        for i2,v2 in temp_toolbar do
+    for i, v in ipairs(self.proj_struct) do
+        -- 一回目は入ってないが、次から増えていく
+        for i2, v2 in ipairs(temp_toolbar) do
             if v2 == v then
-                temp_toolbar[i2+1] = temp_toolbar[i2+1] + 1
+                temp_toolbar[i2 + 1] = temp_toolbar[i2 + 1] + 1
             end
         end
-        table.insert(temp_toolbar,v)
-        table.insert(temp_toolbar,1)
+        table.insert(temp_toolbar, v)
+        table.insert(temp_toolbar, 1)
+    end
+    for i,v in ipairs(temp_toolbar) do
+        if self.drop_item == v then
+            temp_toolbar[i + 1] = temp_toolbar[i + 1] + 1
+        end
     end
 
     local toolbar_items = {}
