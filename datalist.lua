@@ -1,4 +1,4 @@
-local ender_pearl = require("data.ender_pearl")
+local ender_pearl = require("ender_pearl")
 
 local detect_list = {}
 table.insert(detect_list, ender_pearl.detect_item)

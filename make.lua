@@ -3,7 +3,7 @@ local robot = require("robot")
 
 local function getSlotNumFromTable(toolbar_items,item_name)
     for i,v in toolbar_items do
-        name, num = string.match(v, "([^:]+):(%d+)")
+        local name, num = string.match(v, "([^:]+):(%d+)")
         if name == item_name then
             local slotnum = i
             return slotnum
@@ -12,8 +12,9 @@ local function getSlotNumFromTable(toolbar_items,item_name)
 end
 
 local make = function(structure_table, proj_light_size)
-    if getmetatable(structure_table) ~= getmetatable(structure) then
-        error("set structure is unknown data.")
+    local meta_structure_table = getmetatable(structure_table).__index
+    if meta_structure_table ~= structure then
+        error("set structure is unknown data."..structure..meta_structure_table)
     end
 
     local toolbar_items = structure_table.toolbarItems()
