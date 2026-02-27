@@ -1,16 +1,23 @@
 local M = {}
 
-M.proj_struct = {}
-
-M.drop_item = ""
-
-M.detect_item = ""
+-- 確実に子テーブルのデータのみを書き換えるため、インスタンスを作成
+-- .はselfを渡さない
+-- Mが作られる->instanceの親にMをセット->instanceを返すという流れ、自動でメタテーブルをセット
+function M.new()
+    local instance = {
+        proj_struct = {},
+        drop_item = "",
+        detect_item = ""
+    }
+    setmetatable(instance, { __index = M })
+    return instance
+end
 
 function M:toolbarItems()
     local temp_toolbar = {}
     local temp_proj_struct = self.proj_struct
     table.insert(temp_proj_struct,self.drop_item)
-    for i,v in temp_proj_struct do
+    for i,v in pairs(temp_proj_struct) do
         for i2,v2 in temp_toolbar do
             if v2 == v then
                 temp_toolbar[i2+1] = temp_toolbar[i2+1] + 1

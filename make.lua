@@ -17,8 +17,8 @@ local make = function(structure_table, proj_light_size)
         error("set structure is unknown data."..structure..meta_structure_table)
     end
 
-    local toolbar_items = structure_table.toolbarItems()
-    local size, edge_size, face_size = structure_table.calcSize()
+    local toolbar_items = structure_table:toolbarItems()
+    local size, edge_size, face_size = structure_table:calcSize()
 
     local size_diff = proj_light_size - edge_size
     if size_diff < 0 then
@@ -26,7 +26,7 @@ local make = function(structure_table, proj_light_size)
     end
 
     robot.right(2)
-    for i1, v1 in structure_table.proj_struct do
+    for i1, v1 in pairs(structure_table.proj_struct) do
         if v1 ~= "" then
             robot.select(getSlotNumFromTable(toolbar_items,v1))
             robot.placeDown(v1)

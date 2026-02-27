@@ -1,7 +1,6 @@
 local structure = require("structure")
 
-local ender_pearl = {}
-setmetatable(ender_pearl, {__index = structure})
+local ender_pearl = structure.new()
 
 ender_pearl.proj_struct = {
                     "obsidian","obsidian","obsidian",
