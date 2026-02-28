@@ -1,4 +1,4 @@
-local structure = require("structure")
+local structure = require("data.structure")
 
 local ender_pearl = structure.new()
 

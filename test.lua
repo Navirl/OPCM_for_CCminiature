@@ -1,4 +1,4 @@
 local m = require("make")
-local e = require("ender_pearl")
+local e = require("data.ender_pearl")
 
 m.make(e,3)
