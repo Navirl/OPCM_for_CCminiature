@@ -54,7 +54,8 @@ function M:calcSize()
             face_size = i ^ 2
         end
     end
-    assert(size % edge_size ~= 0,size .. " is no cubic number.")
+    -- assertはtrueは素通し、falseで止める
+    assert(size % edge_size == 0,size .. " is no cubic number, or too big.")
     return size, edge_size, face_size
 end
 
