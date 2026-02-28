@@ -37,7 +37,7 @@ function M:toolbarItems()
                         temp_toolbar[i] .. ":" .. temp_toolbar[i+1]
                     )
         if temp_toolbar[i] == self.detect_item then
-            table.insert(toolbar_items,0,toolbar_items[#toolbar_items])
+            table.insert(toolbar_items,1,toolbar_items[#toolbar_items])
             table.remove(toolbar_items)
         end
     end
