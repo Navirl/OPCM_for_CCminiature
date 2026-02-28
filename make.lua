@@ -2,7 +2,7 @@ local structure = require("data.structure")
 local robot = require("robot")
 
 local function getSlotNumFromTable(toolbar_items,item_name)
-    for i,v in toolbar_items do
+    for i,v in ipairs(toolbar_items) do
         local name, num = string.match(v, "([^:]+):(%d+)")
         if name == item_name then
             local slotnum = i
@@ -49,7 +49,7 @@ local make = function(structure_table, proj_light_size)
         robot.up(size_diff)
     end
 
-    robot.dropdown(structure_table.drop_item)
+    robot.dropDown(structure_table.drop_item)
     robot.left(2)
     robot.down(proj_light_size)
 end
