@@ -65,7 +65,7 @@ function M:calcSize()
     for i = 1, 5, 1 do
         if size == i ^ 3 then
             edge_size = i
-            face_size = i ^ 2
+            face_size = math.tointeger(i ^ 2)
         end
     end
     -- assertはtrueは素通し、falseで止める
