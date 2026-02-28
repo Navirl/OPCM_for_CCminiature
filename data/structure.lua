@@ -20,15 +20,30 @@ function M:toolbarItems()
         for i2, v2 in ipairs(temp_toolbar) do
             if v2 == v then
                 temp_toolbar[i2 + 1] = temp_toolbar[i2 + 1] + 1
+                break
+            end
+            if i2 == #temp_toolbar then
+                table.insert(temp_toolbar, v)
+                table.insert(temp_toolbar, 1)
             end
         end
-        table.insert(temp_toolbar, v)
-        table.insert(temp_toolbar, 1)
+        if i == 1 then
+            table.insert(temp_toolbar, v)
+            table.insert(temp_toolbar, 1)
+        end
     end
-    for i,v in ipairs(temp_toolbar) do
+    local broke = false
+    for i, v in ipairs(temp_toolbar) do
+        print(v)
         if self.drop_item == v then
             temp_toolbar[i + 1] = temp_toolbar[i + 1] + 1
+            broke = true
+            break
         end
+    end
+    if not broke then
+        table.insert(temp_toolbar, self.drop_item)
+        table.insert(temp_toolbar, 1)
     end
 
     local toolbar_items = {}
