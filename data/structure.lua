@@ -34,7 +34,6 @@ function M:toolbarItems()
     end
     local broke = false
     for i, v in ipairs(temp_toolbar) do
-        print(v)
         if self.drop_item == v then
             temp_toolbar[i + 1] = temp_toolbar[i + 1] + 1
             broke = true
