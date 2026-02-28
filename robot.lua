@@ -1,13 +1,13 @@
 
 
 return {
-    select = function(v) print("select!")end,
-    placeDown = function(v) print("placedown!") end,
-    left = function(v) print("left!") end,
-    right = function (v) print("right!") end,
-    up = function(v) print("up!") end,
-    north = function(v) print("north!") end,
-    south = function(v) print("south!") end,
-    dropDown = function(v) print("dropDown!") end,
-    down = function(v) print("down!") end
+    select = function(v) print("select! "..v)end,
+    placeDown = function(v) print("placedown! "..v) end,
+    dropDown = function(v) print("dropDown! "..v) end,
+    up = function() print("up!") end,
+    down = function() print("down!") end,
+    turnLeft = function() print("turnLeft!") end,
+    turnRight = function () print("turnRight!") end,
+    forward = function() print("forward!") end,
+    back = function() print("back!") end
 }
