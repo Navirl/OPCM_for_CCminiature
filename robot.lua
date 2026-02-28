@@ -4,6 +4,7 @@ return {
     select = function(v) print("select!")end,
     placeDown = function(v) print("placedown!") end,
     left = function(v) print("left!") end,
+    right = function (v) print("right!") end,
     up = function(v) print("up!") end,
     north = function(v) print("north!") end,
     south = function(v) print("south!") end,
