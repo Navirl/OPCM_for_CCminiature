@@ -32,7 +32,7 @@ local make = function(structure_table, proj_light_size)
         r--xxx
            xxx
            xxx
-    
+
     ]]
     robot.forward()
     robot.forward()
@@ -68,8 +68,8 @@ local make = function(structure_table, proj_light_size)
             robot.up()
         end
     end
-
-    robot.dropDown(structure_table.drop_item)
+    robot.select(getSlotNumFromTable(toolbar_items, structure_table.drop_item))
+    robot.dropDown()
     robot.back()
     robot.back()
     for _i = 1, proj_light_size, 1 do
