@@ -39,7 +39,7 @@ local make = function(structure_table, proj_light_size)
     for i1, v1 in pairs(structure_table.proj_struct) do
         if v1 ~= "" then
             robot.select(getSlotNumFromTable(toolbar_items, v1))
-            robot.placeDown(v1)
+            robot.placeDown()
         end
 
         if i1 % edge_size == 0 then
@@ -69,7 +69,7 @@ local make = function(structure_table, proj_light_size)
         end
     end
     robot.select(getSlotNumFromTable(toolbar_items, structure_table.drop_item))
-    robot.dropDown()
+    robot.dropDown(1)
     robot.back()
     robot.back()
     for _i = 1, proj_light_size, 1 do
