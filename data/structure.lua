@@ -32,6 +32,7 @@ function M:toolbarItems()
             table.insert(temp_toolbar, 1)
         end
     end
+    -- ツールバーにdrop_itemがあればそこに追加、なければ末尾に追加
     local broke = false
     for i, v in ipairs(temp_toolbar) do
         if self.drop_item == v then
@@ -50,6 +51,7 @@ function M:toolbarItems()
         table.insert(toolbar_items,
                         temp_toolbar[i] .. ":" .. temp_toolbar[i+1]
                     )
+        -- detect_itemを先頭に
         if temp_toolbar[i] == self.detect_item then
             table.insert(toolbar_items,1,toolbar_items[#toolbar_items])
             table.remove(toolbar_items)
