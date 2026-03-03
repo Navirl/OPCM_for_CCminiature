@@ -3,13 +3,15 @@ local M = {}
 -- 確実に子テーブルのデータのみを書き換えるため、インスタンスを作成
 -- .はselfを渡さない
 -- Mが作られる->instanceの親にMをセット->instanceを返すという流れ、自動でメタテーブルをセット
-function M.new()
+function M.new(data)
     local instance = {
-        proj_struct = {},
-        drop_item = "",
-        detect_item = ""
+        proj_struct = data.proj_struct or {},
+        drop_item = data.drop_item or "",
+        detect_item = data.detect_item or "",
     }
     setmetatable(instance, { __index = M })
+    --　値を貰い、metatable設定後ならtoolbarItems()が使える
+    instance.toolbar_items = instance:toolbarItems()
     return instance
 end
 
