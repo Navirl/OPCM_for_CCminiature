@@ -60,12 +60,14 @@ end
 
 function M:calcSize()
     local size = #self.proj_struct
-    local edge_size = 0
-    local face_size = 0
+    local edge_size = 1
+    local face_size = 1
     for i = 1, 5, 1 do
         if size == i ^ 3 then
             edge_size = i
-            face_size = math.tointeger(i ^ 2)
+            -- i^2はfloatであり、math.integer()はnilの可能性がある
+            -- or 0でnilのdefaultを0にすることもできる、nilは偽なので
+            face_size = i * i
         end
     end
     -- assertはtrueは素通し、falseで止める
