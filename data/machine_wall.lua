@@ -5,7 +5,7 @@ proj_struct = {
                     "iron_block","",
                     "","",
 
-                    "redstone/use","",
+                    "redstone","",
                     "","",
 },
 drop_item = "redstone",

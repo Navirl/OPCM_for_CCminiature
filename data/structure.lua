@@ -23,12 +23,6 @@ function M:toolbarItems()
         if v ~= "" then
             toolbar_size = #temp_toolbar
             for i2, v2 in ipairs(temp_toolbar) do
-                -- 最初一つ目は直追加
-                if toolbar_size == 0 then
-                    table.insert(temp_toolbar, v)
-                    table.insert(temp_toolbar, 1)
-                    break
-                end
                 -- 見つけたら追加
                 if v2 == v then
                     temp_toolbar[i2 + 1] = temp_toolbar[i2 + 1] + 1
@@ -41,7 +35,13 @@ function M:toolbarItems()
                     table.insert(temp_toolbar, 1)
                 end
             end
-
+            ---@diagnostic disable-next-line: invert-if
+            -- 最初一つ目は直追加
+            if toolbar_size == 0 then
+                table.insert(temp_toolbar, v)
+                table.insert(temp_toolbar, 1)
+                break
+            end
         end
     end
     -- ツールバーにdrop_itemがあればそこに追加、なければ末尾に追加
