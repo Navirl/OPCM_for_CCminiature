@@ -1,6 +1,6 @@
 /.vscode
 /.zed
 *.json
-test.lua
+/debug
 *.dll
 *.exe
