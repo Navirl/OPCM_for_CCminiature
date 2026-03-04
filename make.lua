@@ -21,7 +21,7 @@ local make = function(structure_table, proj_light_size)
     end
 
     local toolbar_items = structure_table:toolbarItems()
-    local size, edge_size, face_size = structure_table:calcSize()
+    local edge_size, face_size = structure_table:calcEdgeFace()
 
     local size_diff = proj_light_size - edge_size
     if size_diff < 0 then
@@ -44,7 +44,12 @@ local make = function(structure_table, proj_light_size)
         if v1 ~= "" then
             local slot_num = getSlotNumFromTable(toolbar_items, v1)
             robot.select(slot_num)
-            robot.placeDown()
+            local _, flag = string.match(v1, "([^/]+)/(.+)")
+            if flag == "use" then
+                robot.useDown()
+            else
+                robot.placeDown()
+            end
         end
         -- 端までは設置後前進
         if i1 % edge_size ~= 0 then
@@ -63,8 +68,8 @@ local make = function(structure_table, proj_light_size)
                 for _i = 1, edge_size - 1, 1 do
                     robot.forward()
                 end
-                robot.up()
                 robot.turnRight()
+                robot.up()
             end
         end
     end
