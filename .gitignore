@@ -1,1 +1,6 @@
 /.vscode
+/.zed
+*.json
+test.lua
+*.dll
+*.exe
