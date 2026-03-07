@@ -1,0 +1,63 @@
+-- structureの作成アイテムはtasksに存在するか
+-- 実際にrobotが作成できるアイテムかは保証しない
+-- itemnameはstructureに追加する
+function getCapableTaskNum(structure,tasks):int,str
+    for i,v in tasks do
+        local _, name = string.match(
+            v["stack"]["item"]["name"],
+             "([^:]+):(%d+)"
+        )
+        if name == structure.itemname then
+            return i
+        end
+    end
+    return "No capable task."
+end
+
+-- タスクナンバーでタスクを指定して渡す
+-- グリッドからinputのアイテムを取り出せるか
+-- 取り出したもので作成できるかは保証しない
+function calcExtractTaskItemsFromGrid(structure,task):table,str
+
+    local error_message = ""
+    local extract_items = {}
+    for i,v in task["pattern"]["inputs"] do
+        -- continue代わり
+        while true do
+            -- inputに何も入ってないならcontinue
+            if v["n"] == 0 then
+                break
+            else
+                -- gridの方が数あればOK
+                local itemname = v[1]["name"]
+                local itemsize = v[1]["size"]
+                if itemsize <= getitem({name=itemname}).size then
+                    table.insert(extract_items, {name=itemname, size=itemsize})
+                    break
+                else
+                    error_message = error_message .. "Not enough " .. v[1]["name"] .. "\n"
+                end
+            end
+            break
+        end
+    end
+
+    if error_message == "" then
+        return extract_items
+    else
+        return error_message
+    end
+end
+
+function extractItemsFromGrid(extract_items):table,str
+    for i,v in extract_items do
+        select(i)
+        extractItem({name=v.name},v.size)
+    end
+end
+
+return {
+    getCapableTaskNum = getCapableTaskNum,
+    calcExtractTaskItemsFromGrid = calcExtractTaskItemsFromGrid,
+    extractItemsFromGrid = extractItemsFromGrid,
+}
