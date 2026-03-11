@@ -17,6 +17,7 @@ end
 -- タスクナンバーでタスクを指定して渡す
 -- グリッドからinputのアイテムを取り出せるか
 -- 取り出したもので作成できるかは保証しない
+-- 複数セットを同時に計算できない、一回crafter挟むんだし作れないならそこで弾かれるはず
 function calcExtractTaskItemsFromGrid(structure,task):table,str
 
     local error_message = ""
