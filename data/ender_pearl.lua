@@ -15,7 +15,6 @@ local ender_pearl = structure.new({
         "obsidian", "obsidian", "obsidian",
 
     },
-    --- drop_item = "redstone",
 })
 
 return ender_pearl

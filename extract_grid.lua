@@ -12,6 +12,8 @@ function getCapableTaskNum(item_name,tasks)
                 break
             end
             local _, name = string.match(
+                -- outputsはあくまでパターンの出力
+                -- 何を作るかはstacksの方のはず
                 v["stack"]["item"]["name"],
                 "([^:]+):(.+)"
             )
