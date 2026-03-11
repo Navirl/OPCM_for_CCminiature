@@ -6,7 +6,7 @@ local function getSlotNumFromTable(toolbar_items, item_name)
         return nil
     end
     for i, v in ipairs(toolbar_items) do
-        local name, num = string.match(v, "([^:]+):(%d+)")
+        local name = v.name
         if name == item_name then
             local slotnum = i
             return slotnum
@@ -14,13 +14,12 @@ local function getSlotNumFromTable(toolbar_items, item_name)
     end
 end
 
-local make = function(structure_table, proj_light_size)
+local make = function(structure_table, toolbar_items, proj_light_size)
     local meta_structure_table = getmetatable(structure_table).__index
     if meta_structure_table ~= structure then
         error("set structure is unknown data." .. structure .. meta_structure_table)
     end
 
-    local toolbar_items = structure_table:toolbarItems()
     local edge_size, face_size = structure_table:calcEdgeFace()
 
     local size_diff = proj_light_size - edge_size
@@ -74,21 +73,14 @@ local make = function(structure_table, proj_light_size)
         end
     end
 
-    if size_diff >= 0 then
-        for _i = 1, size_diff, 1 do
-            robot.up()
-        end
-    end
-    local slot_num = getSlotNumFromTable(toolbar_items, structure_table.drop_item)
-    robot.select(slot_num)
-    robot.dropDown(1)
     robot.back()
     robot.back()
-    for _i = 1, proj_light_size, 1 do
+    for _i = 1, edge_size, 1 do
         robot.down()
     end
+    local slot_num = #toolbar_items
+    robot.select(slot_num)
+    robot.drop(1)
 end
 
-return {
-    make = make
-}
+return make
