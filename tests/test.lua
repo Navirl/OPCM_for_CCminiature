@@ -4,11 +4,10 @@ local mw = require("data.machine_wall")
 local grid = require("component.block_refinedstorage_grid_0")
 local make = require("make")
 local eg = require("extract_grid")
-local p = require("tprint")
-
+local extract_chest = require("extract_chest")
 
 --- make.make(e,3)
-describe("Does make work?", function()
+describe("make", function()
     local tasks = grid.getTasks()
     it("ender_pearl", function()
         local num = eg.getCapableTaskNum("ender_pearl", tasks)
@@ -33,5 +32,18 @@ describe("Does make work?", function()
             print_all = print_all .. tostring(call.vals[1]) .. "\n"
         end
         assert.are.equals(print_all, "forward!\nforward!\nselect! 1\nplacedown!\nforward!\nback!\nturnRight!\nforward!\nturnLeft!\nforward!\nback!\nturnLeft!\nforward!\nturnRight!\nup!\nselect! 2\nplacedown!\nforward!\nback!\nturnRight!\nforward!\nturnLeft!\nforward!\nback!\nturnLeft!\nforward!\nturnRight!\nup!\nback!\nback!\ndown!\ndown!\nselect! 2\ndrop! 1\n")
+    end)
+end)
+
+describe("transposer", function()
+    it("extract_chest", function()
+        local s = stub(_G, "print")
+        extract_chest()
+        local print_all = ""
+        for _, call in ipairs(s.calls) do
+            local call_printed = tostring(call.vals[1])
+            print_all = print_all .. call_printed .. "\n"
+        end
+        assert.are.equals(print_all, "getAllStacks 2\nfsi 0, tsi 1, size 2.0, fs 1, ts 1\nfsi 0, tsi 1, size 4.0, fs 2, ts 2\n")
     end)
 end)
