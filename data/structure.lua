@@ -5,6 +5,7 @@ local M = {}
 -- Mが作られる->instanceの親にMをセット->instanceを返すという流れ、自動でメタテーブルをセット
 function M.new(data)
     local instance = {
+        item_name = data.item_name or "",
         proj_struct = data.proj_struct or {}
     }
     setmetatable(instance, { __index = M })

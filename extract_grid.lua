@@ -1,10 +1,11 @@
 local grid = require("component.block_refinedstorage_grid_0")
+local robot = require("robot")
 
 -- structureの作成アイテムはtasksに存在するか
 -- 実際にrobotが作成できるアイテムかは保証しない
 -- item_nameはstructureに追加する
 --@return number|string
-function getCapableTaskNum(item_name,tasks)
+function getMakingIteminTaskNum(item_name,tasks)
     for i,v in pairs(tasks) do
         repeat
             -- 最後のnまで回してしまうのでbreak
@@ -26,7 +27,7 @@ function getCapableTaskNum(item_name,tasks)
             end
         until true
     end
-    return "No capable task."
+    return "No making that item in tasks."
 end
 
 -- タスクナンバーでタスクを指定して渡す
@@ -68,15 +69,15 @@ function calcToolbaraboutExtractableTaskItems(task)
     end
 end
 
-function extractItemsFromGrid(toolbar_items)
+function extractItemsFromGrid(toolbar_items,sides)
     for i,v in ipairs(toolbar_items) do
-        select(i)
-        grid.extractItem({name=v.name},v.size)
+        robot.select(i)
+        grid.extractItem({name=v.name},v.size,sides)
     end
 end
 
 return {
-    getCapableTaskNum = getCapableTaskNum,
+    getMakingIteminTaskNum = getMakingIteminTaskNum,
     calcToolbaraboutExtractableTaskItems = calcToolbaraboutExtractableTaskItems,
     extractItemsFromGrid = extractItemsFromGrid,
 }

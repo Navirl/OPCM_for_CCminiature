@@ -1,10 +1,10 @@
-local ender_pearl = require("ender_pearl")
-local machine_wall = require("machine_wall")
+local ender_pearl = require("data.ender_pearl")
+local machine_wall = require("data.machine_wall")
 
-local toolbar_list = {}
-table.insert(toolbar_list, ender_pearl.toolbar_items)
-table.insert(toolbar_list, machine_wall.toolbar_items)
+local item_names = {}
+table.insert(item_names, ender_pearl.item_name)
+table.insert(item_names, machine_wall.item_name)
 
 return {
-    toolbar_list = toolbar_list
+    item_names = item_names
 }

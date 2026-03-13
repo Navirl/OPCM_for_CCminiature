@@ -1,6 +1,7 @@
 local structure = require("data.structure")
 
 local ender_pearl = structure.new({
+    item_name = "ender_pearl",
     proj_struct = {
         "obsidian", "obsidian", "obsidian",
         "obsidian", "obsidian", "obsidian",
