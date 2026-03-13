@@ -41,7 +41,7 @@ for i=1,set_num do
     -- gridからchestへ
     local toolbar_items = eg.calcToolbaraboutExtractableTaskItems(tasks[task_num])
 
-    for i2,v2 in toolbar_items do
+    for i2,v2 in ipairs(toolbar_items) do
         eg.extractItemsFromGrid(v2,sides.north)
         -- chestからrobotへ
         ec(sides.south,sides.up,i2)
