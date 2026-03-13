@@ -1,5 +1,5 @@
-local ender_pearl = require("data.ender_pearl")
-local machine_wall = require("data.machine_wall")
+local ender_pearl = require('structures.ender_pearl')
+local machine_wall = require('structures.machine_wall')
 
 local item_names = {}
 table.insert(item_names, ender_pearl.item_name)

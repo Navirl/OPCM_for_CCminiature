@@ -1,4 +1,4 @@
-local structure = require("data.structure")
+local structure = require('structures.structure')
 
 local machine_wall = structure.new({
     item_name = "machine_wall",

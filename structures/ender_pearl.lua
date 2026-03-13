@@ -1,4 +1,4 @@
-local structure = require("data.structure")
+local structure = require('structures.structure')
 
 local ender_pearl = structure.new({
     item_name = "ender_pearl",
