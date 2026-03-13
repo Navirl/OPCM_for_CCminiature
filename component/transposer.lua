@@ -3,6 +3,7 @@ local tkeys_to_numbers = require("tkeys_to_numbers")
 
 local function _numtrans()
     local file = io.open("./debug/exam_trans.json", "r")
+    ---@diagnostic disable-next-line: need-check-nil
     local trans = json.decode(file:read("a"))
     local num_trans = tkeys_to_numbers(trans)
     return num_trans

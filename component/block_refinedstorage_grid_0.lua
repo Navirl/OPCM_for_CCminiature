@@ -12,7 +12,7 @@ return {
     getItem = function(v)
         return {size = 10000.0}
     end,
-    extractItem = function(v,i)
-        print("extracted! "..v..i)
+    extractItem = function(v,i,s)
+        print("extracted! "..v.name.." size:"..i.." sides:"..s)
     end,
 }
