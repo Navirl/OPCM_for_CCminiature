@@ -51,10 +51,14 @@ while true do
         tunnel.send("make^" .. item_name .. "^" .. json.encode(toolbar_items))
 
         -- ロボットから終了を受け取る
-        local _, _, _, _, _, recv_data = event.pull("modem_message")
-        -- 終了以外を受け取ったらエラー、終了なら次のextractに進む
-        if recv_data ~= "finished" then
-            return "error" .. recv_data
+        while true do
+            local _, _, _, _, _, recv_data = event.pull("modem_message")
+            -- 終了以外を受け取ったらエラー、終了なら次のextractに進む
+            if recv_data ~= "finished" then
+                return "error" .. recv_data
+            else
+                break
+            end
         end
         print("set " .. i)
     end
