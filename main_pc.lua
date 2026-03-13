@@ -7,7 +7,7 @@ local sides = require("sides")
 local tunnel = require("component.tunnel")
 local json = require("json")
 
-return function()
+
 print("信号を待機中...")
 
 -- レッドストーン信号（redstone_changed）が変わるまで一時停止

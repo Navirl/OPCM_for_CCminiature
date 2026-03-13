@@ -4,7 +4,8 @@ return {
             return "","","","",15
         end
         if event_name == "modem_message" then
-            return "","","","","finished"
+            return "","","","",'make^ender_pearl^[{"size":26,"name":"obsidian"},{"size":1,"name":"redstone_block"},{"size":1,"name":"redstone"}]'
+            --- return "","","","","finished"
         end
     end
 }
