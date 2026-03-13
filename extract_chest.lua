@@ -3,7 +3,7 @@ local tkeys_to_numbers = require("tkeys_to_numbers")
 
 return function(chest_sides,robot_sides)
     local chest_stacks = tp.getAllStacks(chest_sides)
-    local chest_stacks_data = tkeys_to_numbers(chest_stacks.getAll())
+    local chest_stacks_data = chest_stacks.getAll()
     local chest_stacks_size = chest_stacks.count()
 
     local now_size = 0.0
