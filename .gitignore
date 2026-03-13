@@ -1,6 +1,6 @@
 /.vscode
 /.zed
 *.json
-/debug
+tests/debug
 *.dll
 *.exe
