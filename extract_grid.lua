@@ -69,8 +69,8 @@ function calcToolbaraboutExtractableTaskItems(task)
     end
 end
 
-function extractItemsFromGrid(item_data,side)
-    grid.extractItem({name=item_data.name},item_data.size,side)
+function extractItemsFromGrid(item_data,chest_side)
+    grid.extractItem({name=item_data.name},item_data.size,chest_side)
 end
 
 return {
