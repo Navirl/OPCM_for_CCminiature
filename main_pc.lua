@@ -40,10 +40,12 @@ local set_num = tasks[task_num]["quantity"]
 for i=1,set_num do
     -- gridからchestへ
     local toolbar_items = eg.calcToolbaraboutExtractableTaskItems(tasks[task_num])
-    eg.extractItemsFromGrid(toolbar_items)
 
-    -- chestからrobotへ
-    ec(sides.south,sides.up)
+    for i2,v2 in toolbar_items do
+        eg.extractItemsFromGrid(v2,sides.north)
+        -- chestからrobotへ
+        ec(sides.south,sides.up,i2)
+    end
 
     -- ロボットにやってもらう
     tunnel.send("make^"..item_name.."^"..json.encode(toolbar_items))
