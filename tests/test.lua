@@ -1,16 +1,16 @@
 ---@diagnostic disable: undefined-global, undefined-field
-local ep = require('structures.ender_pearl')
-local mw = require('structures.machine_wall')
-local c = require("component")
-local grid = c.block_refinedstorage_grid_0
-local make = require("make")
-local eg = require("extract_grid")
-local extract_chest = require("extract_chest")
+
+
 
 --- make.make(e,3)
 describe("make", function()
+    local eg = require("extract_grid")
+    local c = require("component")
+    local grid = c.block_refinedstorage_grid_0
     local tasks = grid.getTasks()
+    local make = require("make")
     it("ender_pearl", function()
+        local ep = require('structures.ender_pearl')
         local num = eg.getMakingIteminTaskNum("ender_pearl", tasks)
         local toolbar = eg.calcToolbaraboutExtractableTaskItems(tasks[num])
         local s = stub(_G, "print")
@@ -24,6 +24,7 @@ describe("make", function()
         end)
 
     it("machine_wall", function()
+        local mw = require('structures.machine_wall')
         local num = eg.getMakingIteminTaskNum("machine_wall", tasks)
         local toolbar = eg.calcToolbaraboutExtractableTaskItems(tasks[num])
         local s = stub(_G, "print")
@@ -36,15 +37,23 @@ describe("make", function()
     end)
 end)
 
+describe("refined", function()
+    it("extractItemFromGrid", function()
+        local eg = require("extract_grid")
+        eg.extractItemFromGrid({name="obsidian",size=1.0},2)
+    end)
+end)
+
 describe("transposer", function()
     it("extract_chest", function()
+        local ec = require("extract_chest")
         local s = stub(_G, "print")
-        extract_chest(0,1)
+        ec(0,1,1)
         local print_all = ""
         for _, call in ipairs(s.calls) do
             local call_printed = tostring(call.vals[1])
             print_all = print_all .. call_printed .. "\n"
         end
-        assert.are.equals(print_all, "getAllStacks 0\nfsi 0, tsi 1, size 2.0, fs 1, ts 1\nfsi 0, tsi 1, size 4.0, fs 2, ts 2\n")
+        assert.are.equals(print_all, "side 0, slot 1\nfsi 0, tsi 1, size 2.0, fs 1, ts 1\n")
     end)
 end)
