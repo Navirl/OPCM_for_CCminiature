@@ -1,39 +1,38 @@
 local structure = require('structures.structure')
 
 local large_compact_machine = structure.new({
-    item_name = "large_compact_machine",
+    item_name = "Large Compact Machine",
     sleep_time = 12,
     proj_struct = {
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
 
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
 
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
 
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
 
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-        "machine_wall", "machine_wall", "machine_wall", "machine_wall", "machine_wall",
-
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
     }
 })
 

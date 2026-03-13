@@ -12,13 +12,14 @@ function getMakingIteminTaskNum(item_name,tasks)
             if type(v) ~= type(table) then
                 break
             end
-            local _, name = string.match(
-                -- outputsはあくまでパターンの出力
-                -- 何を作るかはstacksの方のはず
-                v["stack"]["item"]["name"],
-                "([^:]+):(.+)"
-            )
-            if name == item_name then
+            --- local _, name = string.match(
+            ---     -- outputsはあくまでパターンの出力
+            ---     -- 何を作るかはstacksの方のはず
+            ---     v["stack"]["item"]["name"],
+            ---     "([^:]+):(.+)"
+            --- )
+            --- if name == item_name then
+            if v["stack"]["item"]["label"] == item_name then
                 return i
             end
             -- 無限ループしないよう一応最後まで来たらbreak
@@ -46,16 +47,17 @@ function calcToolbaraboutExtractableTaskItems(task)
                 break
             else
                 -- gridの方が数あればOK
-                local _, itemname = string.match(
-                    v[1]["name"],
-                    "([^:]+):(.+)"
-                )
+                --- local _, itemname = string.match(
+                ---     v[1]["name"],
+                ---     "([^:]+):(.+)"
+                --- )
+                local itemname = v[1]["label"]
                 local itemsize = v[1]["size"]
                 if itemsize <= grid.getItem({name=itemname}).size then
                     table.insert(toolbar_items, {name=itemname, size=math.tointeger(itemsize)})
                     break
                 else
-                    error_message = error_message .. "Not enough " .. v[1]["name"] .. "\n"
+                    error_message = error_message .. "Not enough " .. v[1]["label"] .. "\n"
                 end
             end
             break

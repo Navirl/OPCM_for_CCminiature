@@ -1,13 +1,13 @@
 local structure = require('structures.structure')
 
 local machine_wall = structure.new({
-    item_name = "wallbreakable",
+    item_name = "Compact Machine Wall",
     sleep_time = 6,
     proj_struct = {
-        "iron_block", "",
+        "Block of Iron", "",
         "", "",
 
-        "redstone", "",
+        "Redstone", "",
         "", "",
     }
 })
