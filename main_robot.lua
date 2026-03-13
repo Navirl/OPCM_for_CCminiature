@@ -7,12 +7,13 @@ local dl = require("datalist")
 local item_name_e = ""
 local toolbar_item_e = ""
 while true do
-    local _, _, _, _, recv_data = event.pull("modem_message")
+    local _, _, _, _, _, recv_data = event.pull("modem_message")
     -- 作成依頼があるなら、どれを作るかが必要
     -- datalistから取り出せば良いんだけど
     -- ツールバー情報も依頼で受け取れ
     local inst, item_name, toolbar_item_raw =
         string.match(recv_data, "([^%^]+)^(.+)^(.+)")
+    ---@diagnostic disable-next-line: assign-type-mismatch
     item_name_e = item_name
     toolbar_item_e = json.decode(toolbar_item_raw)
     if inst == "make" then

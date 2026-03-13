@@ -1,10 +1,11 @@
 local event = require("event")
-local grid = require("component.block_refinedstorage_grid_0")
+local c = require("component")
+local grid = c.block_refinedstorage_grid_0
 local eg = require("extract_grid")
 local ec = require("extract_chest")
 local dl = require("datalist")
 local sides = require("sides")
-local tunnel = require("component.tunnel")
+local tunnel = c.tunnel
 local json = require("json")
 
 
@@ -48,7 +49,7 @@ for i=1,set_num do
     tunnel.send("make^"..item_name.."^"..json.encode(toolbar_items))
 
     -- ロボットから終了を受け取る
-    local _, _, _, _, recv_data = event.pull("modem_message")
+    local _, _, _, _, _, recv_data = event.pull("modem_message")
     -- 終了以外を受け取ったらエラー、終了なら次のextractに進む
     if recv_data ~= "finished" then
         return "error"..recv_data

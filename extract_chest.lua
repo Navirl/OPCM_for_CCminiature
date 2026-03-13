@@ -1,5 +1,5 @@
-local tp = require("component.transposer")
-local tkeys_to_numbers = require("tkeys_to_numbers")
+local c = require("component")
+local tp = c.transposer
 
 return function(chest_sides,robot_sides)
     local chest_stacks = tp.getAllStacks(chest_sides)

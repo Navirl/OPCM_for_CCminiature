@@ -1,4 +1,5 @@
-local grid = require("component.block_refinedstorage_grid_0")
+local c = require("component")
+local grid = c.block_refinedstorage_grid_0
 local robot = require("robot")
 
 -- structureの作成アイテムはtasksに存在するか
