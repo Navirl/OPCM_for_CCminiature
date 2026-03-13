@@ -24,10 +24,10 @@ while true do
     local task_num = 0
     local item_name = ""
     -- 作成可能なタスク探し
-    for i, v in ipairs(dl.structure_list) do
+    for _i, v in pairs(dl.structure_list) do
         task_num = eg.getMakingIteminTaskNum(v.item_name, tasks)
         if task_num ~= "No making that item in tasks." then
-            item_name = v
+            item_name = v.item_name
             break
         end
     end
