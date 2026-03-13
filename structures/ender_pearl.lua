@@ -2,6 +2,7 @@ local structure = require('structures.structure')
 
 local ender_pearl = structure.new({
     item_name = "ender_pearl",
+    sleep_time = 6,
     proj_struct = {
         "obsidian", "obsidian", "obsidian",
         "obsidian", "obsidian", "obsidian",

@@ -6,6 +6,7 @@ local M = {}
 function M.new(data)
     local instance = {
         item_name = data.item_name or "",
+        sleep_time = data.sleep_time or 0,
         proj_struct = data.proj_struct or {}
     }
     setmetatable(instance, { __index = M })
