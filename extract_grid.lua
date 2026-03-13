@@ -1,6 +1,5 @@
 local c = require("component")
 local grid = c.block_refinedstorage_grid_0
-local robot = require("robot")
 
 -- structureの作成アイテムはtasksに存在するか
 -- 実際にrobotが作成できるアイテムかは保証しない
@@ -70,10 +69,9 @@ function calcToolbaraboutExtractableTaskItems(task)
     end
 end
 
-function extractItemsFromGrid(toolbar_items,sides)
+function extractItemsFromGrid(toolbar_items)
     for i,v in ipairs(toolbar_items) do
-        robot.select(i)
-        grid.extractItem({name=v.name},v.size,sides)
+        grid.extractItem({name=v.name},v.size,i)
     end
 end
 
