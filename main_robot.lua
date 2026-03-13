@@ -6,6 +6,7 @@ local c = require("component")
 local tunnel = c.tunnel
 
 while true do
+    print("待機中...")
     -- pcから作成依頼を受け取る
     local item_name_e = ""
     local toolbar_item_e = ""
@@ -27,4 +28,5 @@ while true do
 
     make(dl.proj_structs[item_name_e], toolbar_item_e, 3)
     tunnel.send("finished")
+    print("完了")
 end
