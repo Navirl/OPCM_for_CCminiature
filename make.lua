@@ -42,6 +42,9 @@ local make = function(structure_table, toolbar_items, proj_light_size)
         -- 無ければ何もしない
         if v1 ~= "" then
             local slot_num = getSlotNumFromTable(toolbar_items, v1)
+            if slot_num == nil then
+                error("item not found in toolbar: " .. v1)
+            end
             robot.select(slot_num)
             local _, flag = string.match(v1, "([^/]+)/(.+)")
             if flag == "use" then
