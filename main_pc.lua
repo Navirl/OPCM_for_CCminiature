@@ -40,11 +40,15 @@ while true do
     for i = 1, set_num do
         -- gridからchestへ
         local toolbar_items = eg.calcToolbaraboutExtractableTaskItems(tasks[task_num])
-
-        for i2, v2 in ipairs(toolbar_items) do
-            eg.extractItemFromGrid(v2, sides.north)
-            -- chestからrobotへ
-            ec(sides.south, sides.up, i2)
+        if type(toolbar_items) == type({}) then
+            ---@diagnostic disable-next-line: param-type-mismatch
+            for i2, v2 in ipairs(toolbar_items) do
+                eg.extractItemFromGrid(v2, sides.north)
+                -- chestからrobotへ
+                ec(sides.south, sides.up, i2)
+            end
+        else
+            return print(toolbar_items)
         end
 
         -- ロボットにやってもらう

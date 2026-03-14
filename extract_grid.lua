@@ -35,7 +35,7 @@ end
 -- グリッドからinputのアイテムを取り出せるか
 -- 取り出したもので作成できるかは保証しない
 -- 複数セットを同時に計算できない、一回crafter挟むんだし作れないならそこで弾かれるはず
---@return table|string
+--@return table<integer,V> | string
 function calcToolbaraboutExtractableTaskItems(task)
     local error_message = ""
     local toolbar_items = {}
