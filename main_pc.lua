@@ -20,50 +20,53 @@ while true do
         end
     end
 
-    local tasks = grid.getTasks()
-    local task_num = 0
-    local item_name = ""
-    -- 作成可能なタスク探し
-    for _i, v in pairs(dl.structure_list) do
-        task_num = eg.getMakingIteminTaskNum(v.item_name, tasks)
-        if task_num ~= "No making that item in tasks." then
-            item_name = v.item_name
-            break
-        end
-    end
-    if task_num == 0 or task_num == "No making that item in tasks." then
-        return print("No making that item in tasks.")
-    end
-
-    -- 作成可能なタスクがアイテムを何個作ろうとしてるか、そこから必要なアイテムのセット数を取る
-    local set_num = tasks[task_num]["quantity"]
-    for i = 1, set_num do
-        -- gridからchestへ
-        local toolbar_items = eg.calcToolbaraboutExtractableTaskItems(tasks[task_num])
-        if type(toolbar_items) == type({}) then
-            ---@diagnostic disable-next-line: param-type-mismatch
-            for i2, v2 in ipairs(toolbar_items) do
-                eg.extractItemFromGrid(v2, sides.north)
-                -- chestからrobotへ
-                ec(sides.south, sides.up, i2)
-            end
-        else
-            return print(toolbar_items)
-        end
-
-        -- ロボットにやってもらう
-        tunnel.send("make^" .. item_name .. "^" .. json.encode(toolbar_items))
-
-        -- ロボットから終了を受け取る
-        while true do
-            local _, _, _, _, _, recv_data = event.pull("modem_message")
-            -- 終了以外を受け取ったらエラー、終了なら次のextractに進む
-            if recv_data ~= "finished" then
-                return "error" .. recv_data
-            else
+    while true do
+        local tasks = grid.getTasks()
+        local task_num = 0
+        local item_name = ""
+        -- 作成可能なタスク探し
+        for _i, v in pairs(dl.structure_list) do
+            task_num = eg.getMakingIteminTaskNum(v.item_name, tasks)
+            if task_num ~= "No making that item in tasks." then
+                item_name = v.item_name
                 break
             end
         end
-        print("set " .. i)
+        if task_num == 0 or task_num == "No making that item in tasks." then
+            print("No making that item in tasks.")
+            break
+        end
+
+        -- 作成可能なタスクがアイテムを何個作ろうとしてるか、そこから必要なアイテムのセット数を取る
+        local set_num = tasks[task_num]["quantity"]
+        for i = 1, set_num do
+            -- gridからchestへ
+            local toolbar_items = eg.calcToolbaraboutExtractableTaskItems(tasks[task_num])
+            if type(toolbar_items) == type({}) then
+                ---@diagnostic disable-next-line: param-type-mismatch
+                for i2, v2 in ipairs(toolbar_items) do
+                    eg.extractItemFromGrid(v2, sides.north)
+                    -- chestからrobotへ
+                    ec(sides.south, sides.up, i2)
+                end
+            else
+                return print(toolbar_items)
+            end
+
+            -- ロボットにやってもらう
+            tunnel.send("make^" .. item_name .. "^" .. json.encode(toolbar_items))
+
+            -- ロボットから終了を受け取る
+            while true do
+                local _, _, _, _, _, recv_data = event.pull("modem_message")
+                -- 終了以外を受け取ったらエラー、終了なら次のextractに進む
+                if recv_data ~= "finished" then
+                    return "error" .. recv_data
+                else
+                    break
+                end
+            end
+            print("set " .. i)
+        end
     end
 end
