@@ -4,17 +4,17 @@ local maximum_compact_machine = structure.new({
     item_name = "Maximum Compact Machine",
     sleep_time = 12,
     proj_struct = {
-        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
-        "Compact Machine Wall", "Glitched Giant Machine", "Compact Machine Wall",
-        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "wallbreakable", "wallbreakable", "wallbreakable",
+        "wallbreakable", "glitched4", "wallbreakable",
+        "wallbreakable", "wallbreakable", "wallbreakable",
 
-        "Compact Machine Wall", "Glitched Giant Machine", "Compact Machine Wall",
-        "Glitched Giant Machine", "Machine Casing", "Glitched Giant Machine",
-        "Compact Machine Wall", "Glitched Giant Machine", "Compact Machine Wall",
+        "wallbreakable", "glitched4", "wallbreakable",
+        "glitched4", "blockcasing", "glitched4",
+        "wallbreakable", "glitched4", "wallbreakable",
 
-        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
-        "Compact Machine Wall", "Glitched Giant Machine", "Compact Machine Wall",
-        "Compact Machine Wall", "Compact Machine Wall", "Compact Machine Wall",
+        "wallbreakable", "wallbreakable", "wallbreakable",
+        "wallbreakable", "glitched4", "wallbreakable",
+        "wallbreakable", "wallbreakable", "wallbreakable",
 
     },
 })
