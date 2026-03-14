@@ -28,6 +28,7 @@ while true do
 
     make(dl.structure_list[item_name_e], toolbar_item_e, 3)
     print("完了")
+    ---@diagnostic disable-next-line: undefined-field
     os.sleep(dl.structure_list[item_name_e].sleep_time)
     tunnel.send("finished")
 
