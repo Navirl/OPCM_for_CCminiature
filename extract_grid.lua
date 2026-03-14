@@ -58,7 +58,7 @@ function calcToolbaraboutExtractableTaskItems(task)
                     table.insert(toolbar_items, {name=itemname, size=math.tointeger(itemsize)})
                     break
                 else
-                    error_message = error_message .. "Not enough " .. v[1]["label"] .. "\n"
+                    error_message = error_message .. "Not enough " .. v[1]["name"] .. "\n"
                 end
             end
             break
