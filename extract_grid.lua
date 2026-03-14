@@ -5,7 +5,7 @@ local grid = c.block_refinedstorage_grid_0
 -- 実際にrobotが作成できるアイテムかは保証しない
 -- item_nameはstructureに追加する
 --@return number|string
-function getMakingIteminTaskNum(item_name,tasks)
+function getMakingIteminTaskNum(item_label,tasks)
     for i,v in pairs(tasks) do
         repeat
             -- 最後のnまで回してしまうのでbreak
@@ -19,7 +19,7 @@ function getMakingIteminTaskNum(item_name,tasks)
             ---     "([^:]+):(.+)"
             --- )
             --- if name == item_name then
-            if v["stack"]["item"]["label"] == item_name then
+            if v["stack"]["item"]["label"] == item_label then
                 return i
             end
             -- 無限ループしないよう一応最後まで来たらbreak
@@ -51,7 +51,8 @@ function calcToolbaraboutExtractableTaskItems(task)
                 ---     v[1]["name"],
                 ---     "([^:]+):(.+)"
                 --- )
-                local itemname = v[1]["label"]
+                -- extractItemはnameでstack呼ばないといけないんでname取る
+                local itemname = v[1]["name"]
                 local itemsize = v[1]["size"]
                 if itemsize <= grid.getItem({name=itemname}).size then
                     table.insert(toolbar_items, {name=itemname, size=math.tointeger(itemsize)})
