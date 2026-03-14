@@ -4,17 +4,17 @@ local ender_pearl = structure.new({
     item_name = "Ender Pearl",
     sleep_time = 8,
     proj_struct = {
-        "obsidian", "obsidian", "obsidian",
-        "obsidian", "obsidian", "obsidian",
-        "obsidian", "obsidian", "obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
 
-        "obsidian", "obsidian", "obsidian",
-        "obsidian", "redstone_block", "obsidian",
-        "obsidian", "obsidian", "obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:redstone_block", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
 
-        "obsidian", "obsidian", "obsidian",
-        "obsidian", "obsidian", "obsidian",
-        "obsidian", "obsidian", "obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
+        "minecraft:obsidian", "minecraft:obsidian", "minecraft:obsidian",
 
     },
 })

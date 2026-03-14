@@ -4,17 +4,17 @@ local maximum_compact_machine = structure.new({
     item_name = "Maximum Compact Machine",
     sleep_time = 12,
     proj_struct = {
-        "wallbreakable", "wallbreakable", "wallbreakable",
-        "wallbreakable", "glitched4", "wallbreakable",
-        "wallbreakable", "wallbreakable", "wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched4", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
-        "wallbreakable", "glitched4", "wallbreakable",
-        "glitched4", "blockcasing", "glitched4",
-        "wallbreakable", "glitched4", "wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched4", "compactmachines3:wallbreakable",
+        "contenttweaker:glitched4", "modularmachinery:blockcasing", "contenttweaker:glitched4",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched4", "compactmachines3:wallbreakable",
 
-        "wallbreakable", "wallbreakable", "wallbreakable",
-        "wallbreakable", "glitched4", "wallbreakable",
-        "wallbreakable", "wallbreakable", "wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched4", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
     },
 })

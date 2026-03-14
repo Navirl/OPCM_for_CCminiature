@@ -4,17 +4,17 @@ local giant_compact_machine = structure.new({
     item_name = "Giant Compact Machine",
     sleep_time = 12,
     proj_struct = {
-        "wallbreakable", "wallbreakable", "wallbreakable",
-        "wallbreakable", "glitched3", "wallbreakable",
-        "wallbreakable", "wallbreakable", "wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched3", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
-        "wallbreakable", "glitched3", "wallbreakable",
-        "glitched3", "blockcasing", "glitched3",
-        "wallbreakable", "glitched3", "wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched3", "compactmachines3:wallbreakable",
+        "contenttweaker:glitched3", "modularmachinery:blockcasing", "contenttweaker:glitched3",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched3", "compactmachines3:wallbreakable",
 
-        "wallbreakable", "wallbreakable", "wallbreakable",
-        "wallbreakable", "glitched3", "wallbreakable",
-        "wallbreakable", "wallbreakable", "wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "contenttweaker:glitched3", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
     },
 })

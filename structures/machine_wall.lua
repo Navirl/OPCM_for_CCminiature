@@ -4,10 +4,10 @@ local machine_wall = structure.new({
     item_name = "Compact Machine Wall",
     sleep_time = 6,
     proj_struct = {
-        "iron_block", "",
+        "minecraft:iron_block", "",
         "", "",
 
-        "redstone", "",
+        "minecraft:redstone", "",
         "", "",
     }
 })
