@@ -2,7 +2,7 @@ local structure = require('structures.structure')
 
 local giant_compact_machine = structure.new({
     item_name = "Giant Compact Machine",
-    sleep_time = 12,
+    sleep_time = 25,
     proj_struct = {
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
         "compactmachines3:wallbreakable", "contenttweaker:glitched3", "compactmachines3:wallbreakable",
