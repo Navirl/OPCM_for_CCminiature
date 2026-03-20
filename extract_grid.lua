@@ -19,7 +19,8 @@ function getMakingIteminTaskNum(item_label,tasks)
             ---     "([^:]+):(.+)"
             --- )
             --- if name == item_name then
-            if v["stack"]["item"]["label"] == item_label then
+            local label = v["stack"]["item"]["label"]
+            if label == item_label then
                 return i
             end
             -- 無限ループしないよう一応最後まで来たらbreak
