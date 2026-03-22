@@ -1,4 +1,6 @@
 local c = require("component")
+-- 事故が多すぎるのでデバッグ可能に
+local tprint = require("tprint")
 local grid = c.block_refinedstorage_grid_0
 
 -- structureの作成アイテムはtasksに存在するか
@@ -10,6 +12,11 @@ function getMakingIteminTaskNum(item_label,tasks)
         repeat
             -- 最後のnまで回してしまうのでbreak
             if type(v) ~= type(table) then
+                break
+            end
+            tprint(v["stack"])
+            -- なぜかアイテムが無い時があるので、その時はbreak
+            if not v["stack"]["item"] then
                 break
             end
             local label = v["stack"]["item"]["label"]
