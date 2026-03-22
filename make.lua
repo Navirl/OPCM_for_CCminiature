@@ -46,12 +46,11 @@ local make = function(structure_table, toolbar_items, proj_light_size)
                 error("item not found in toolbar: " .. v1)
             end
             robot.select(slot_num)
-            local _, flag = string.match(v1, "([^/]+)/(.+)")
-            if flag == "use" then
-                robot.useDown()
-            else
+            --- if v1 == "minecraft:flint_and_steel" then
+            ---     robot.useDown()
+            --- else
                 robot.placeDown()
-            end
+            --- end
         end
         -- 端までは設置後前進
         if i1 % edge_size ~= 0 then

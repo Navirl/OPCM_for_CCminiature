@@ -12,13 +12,6 @@ function getMakingIteminTaskNum(item_label,tasks)
             if type(v) ~= type(table) then
                 break
             end
-            --- local _, name = string.match(
-            ---     -- outputsはあくまでパターンの出力
-            ---     -- 何を作るかはstacksの方のはず
-            ---     v["stack"]["item"]["name"],
-            ---     "([^:]+):(.+)"
-            --- )
-            --- if name == item_name then
             local label = v["stack"]["item"]["label"]
             if label == item_label then
                 return i
@@ -47,11 +40,6 @@ function calcToolbaraboutExtractableTaskItems(task)
             if v["n"] == 0 then
                 break
             else
-                -- gridの方が数あればOK
-                --- local _, itemname = string.match(
-                ---     v[1]["name"],
-                ---     "([^:]+):(.+)"
-                --- )
                 -- extractItemはnameでstack呼ばないといけないんでname取る
                 local itemname = v[1]["name"]
                 local itemsize = v[1]["size"]
