@@ -45,9 +45,10 @@ while true do
             if type(toolbar_items) == type({}) then
                 ---@diagnostic disable-next-line: param-type-mismatch
                 for i2, v2 in ipairs(toolbar_items) do
-                    eg.extractItemFromGrid(v2, sides.north)
+                    -- めんどくさいのでsides決め打ち
+                    eg.extractItemFromGrid(v2, sides.west)
                     -- chestからrobotへ
-                    ec(sides.south, sides.up, i2)
+                    ec(sides.east, sides.up, i2)
                 end
             else
                 return print(toolbar_items)

@@ -14,7 +14,8 @@ function getMakingIteminTaskNum(item_label,tasks)
             if type(v) ~= type(table) then
                 break
             end
-            tprint(v["stack"])
+            -- デバッグ用、メモリ使い果たすのでふだんなし
+            -- tprint(v["stack"])
             -- なぜかアイテムが無い時があるので、その時はbreak
             if not v["stack"]["item"] then
                 break
