@@ -11,21 +11,21 @@ local maximum_compact_machine = structure.new({
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "contenttweaker:glitched4", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","contenttweaker:glitched4","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
-        "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
+        "compactmachines3:wallbreakable", "","","", "compactmachines3:wallbreakable",
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
 
         "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable", "compactmachines3:wallbreakable",
