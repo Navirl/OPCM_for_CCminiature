@@ -6,12 +6,19 @@ local function getSlotNumFromTable(toolbar_items, item_name)
         return nil
     end
     for i, v in ipairs(toolbar_items) do
-        local name = v.name
-        if name == item_name then
-            local slotnum = i
-            return slotnum
-        end
+        repeat
+            local name = v.name
+            if name == item_name then
+                local slotnum = i
+                -- 実際が空だった時は次のスロットに行く
+                if robot.count(slotnum) == 0 then
+                    break
+                end
+                return slotnum
+            end
+        until true
     end
+    return nil
 end
 
 local make = function(structure_table, toolbar_items, proj_light_size)
@@ -46,11 +53,7 @@ local make = function(structure_table, toolbar_items, proj_light_size)
                 error("item not found in toolbar: " .. v1)
             end
             robot.select(slot_num)
-            --- if v1 == "minecraft:flint_and_steel" then
-            ---     robot.useDown()
-            --- else
-                robot.placeDown()
-            --- end
+            robot.placeDown()
         end
         -- 端までは設置後前進
         if i1 % edge_size ~= 0 then
